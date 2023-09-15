@@ -17,12 +17,19 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 connectDB();
 
+app.get('/',
+    async(req,res,next)=>{
+        res.send('/Bienvenido a mi server');
+    }
+)
+
 app.get('/dashboard',
     authenticateToken,
     async(req,res,next)=>{
         res.send('hola');
     }
 );
+
 
 
 Router(app);
