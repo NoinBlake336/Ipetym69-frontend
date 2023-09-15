@@ -37,7 +37,12 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap:2rem;
 }
 #navLogin ul li{
     margin-inline:2rem;
+}
+
+#navLogin ul li img{
+    width: 4.5rem;
 }

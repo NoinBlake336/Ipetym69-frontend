@@ -1,5 +1,25 @@
+import {VerifyToken} from "./authenticateAdminPanel.js";
+const token = localStorage.setItem('token');
+const container = document.getElementById("bodyAdminPanel");
+
+
+const Dashboard = ()=>{
+    VerifyToken(token,container);
+};
+
+Dashboard();
+
+
+
+
 const uploadOptions = document.querySelectorAll(".upload-option");
 const typesContainer = document.getElementById("types-container");
+
+
+
+
+
+
 
 const handlerOption = (option) => {
   console.log(option === "Noticia");
@@ -52,3 +72,6 @@ uploadOptions.forEach((option) => {
     false
   );
 });
+
+
+

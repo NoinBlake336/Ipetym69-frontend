@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+const cors = require('cors');
 const Router = require('./router');
 const bodyParser = require('body-parser');
 const {logErrors,errorHandler,boomErrorHandler} = require('./middlewares/error.handler');
@@ -13,7 +13,10 @@ require('./utils/auth');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
-
+app.use(cors({
+    origin:['http://127.0.0.1:5500/src/login.html'],
+    methods:['GET','POST','DELETE','PATCH','UPDATE']
+}))
 
 connectDB();
 
