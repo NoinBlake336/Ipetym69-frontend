@@ -17,21 +17,38 @@ const handlerButton = (credentials) => {
 }
 
 const login = (inputs)=>{
-    fetch(`${API_URL}api/auth`,{
-        method:'POST',
-        headers:{
-            'Content-Type':'application/json',
-        },
-        body:JSON.stringify({
-            username:inputs.username,
-            password:inputs.password,
-        }),
-    })
-    .then(response =>{
-        if(response.ok){
-            console.log(response.json());
+
+    const fecthData = async()=>{
+        try {
+            const response = await fetch(`${API_URL}api/auth`,{
+               method:'POST',
+               mode:'cors',
+               headers:{
+                'Content-Type':'application/json',
+               },
+               body:JSON.stringify({
+                username:inputs.username,
+                password:inputs.password,    
+               }),
+            });
+
+            if(!response.ok){
+                throw new Error('La solicitud no fue exitosa');
+            };
+
+            if(response.ok){
+                const data = await response.json();
+
+                localStorage.setItem('token',JSON.stringify({user:data.user,token:data.token}));
+            }
+            
+        } catch (error) {
+            throw new Error('Error en la solicitud')
         }
-    })
+
+    }
+
+    fecthData();
 }
 
 loginForm.addEventListener("submit",
