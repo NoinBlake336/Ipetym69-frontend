@@ -1,0 +1,171 @@
+#others{
+    display: grid;
+    height:100%;
+    width: 100%;
+    background-color: var(--primary-dark);
+}
+
+
+#others-title-container{
+    display: flex;
+    font-size:16rem;
+    justify-content:center;
+}
+#others-title{
+    border-bottom: 3px solid white;
+    color:white;
+    margin-bottom: 8rem;
+}
+/* #others-title{  
+    align-self
+    
+} */
+
+.others-container{
+    justify-self: center;
+    border: white solid 2px;
+    height: 90%;
+    width: 80%;
+    display: grid;
+    box-shadow: 0px 0px 5px white;
+    grid-template-rows: 20% 80%;
+
+}
+
+#forms{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    font-size: 10rem;
+}
+
+
+
+#form-title-container{
+    color: white;
+    margin-top: 10rem;
+    text-align: center;
+    font-size: 8rem;
+    margin-bottom: 5rem;    
+}
+
+.information-forms{
+    padding: 15rem;
+    color: white;
+}
+
+.information-forms h2{
+    font-size: 11rem;
+    margin-bottom: 2rem;
+}
+
+.information-forms li{
+    display: flex;
+    justify-items: center;
+    align-items: flex-start;
+    font-size: 8rem;
+}
+
+.information-forms li p{
+    padding-bottom:5rem;
+    font-size: 10.5rem;
+}
+
+.information-forms li i{
+    padding-right: 2rem;
+    color: rgb(78 168 229);
+}
+
+.btn-forms{
+    justify-self: center;
+    align-self: center;
+}
+
+#forms button{
+    all: unset;
+    width: 100rem;
+    height: 20rem;
+    background-color: white;
+    text-align: center;
+    border-radius: 5rem;
+    background-color: var(--informatica);
+    border: 0;
+    box-shadow: 0 6px 0 rgb(30 76 100), 0 5px 15px -4px #000;;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 800;
+    padding: 5px;
+    text-transform: uppercase;
+    transition: box-shadow 0.1s ease-in-out, margin-top 0.1s ease-in-out, opacity 0.1s ease-in-out;
+}
+
+#forms button:hover,
+#forms button:focus {
+    opacity: 0.9;
+    outline: 0;
+}
+
+#forms button:active {
+    box-shadow: none;
+}
+
+
+#forms:nth-child(2) p{
+    font-size: 9.5rem;
+}
+
+#forms:nth-child(2) button{
+    font-size: 7rem;
+}
+#formulario{
+    background-color: rgb(3 105 161 / 51%);
+    box-shadow: 0px 0px 5px white;
+}
+#cuadernillo{
+    background-color: rgb(27 56 72 / 51%);
+}
+#cuadernillo button{
+    background-color: rgba(37, 113, 153, 0.51);
+}
+
+
+
+@media (max-width:740px) {
+    #forms{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2,1fr);
+    }
+
+    #forms button{
+        width: 100%;
+    }
+
+    .btn-forms{
+        margin: 10rem;
+    }
+
+    .information-forms{
+        justify-self: center;
+        align-self:center;
+        padding-left: 15rem;padding-top: 5px;padding-bottom: 0px;
+        text-align: center;
+    }
+
+    #form-title-container{
+        margin-bottom: 2rem;
+    }
+
+    .others-container{
+        gap:2rem;
+    }
+
+
+
+
+}
+
+#support{   
+    text-overflow: clip;
+    color: white;
+    font-size: 8rem;
+}

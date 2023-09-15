@@ -1,0 +1,129 @@
+#upload-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+}
+#upload-options {
+  margin-top: 2rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+#upload-options span {
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  border: #fff 2px solid;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+#upload-options span:hover {
+  border: rgb(125, 134, 139) 2px solid;
+  color: rgb(3, 105, 161);
+  background-color: rgb(208, 228, 238);
+  cursor: pointer;
+
+}
+
+.uploaded-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+    background-color: rgba(175, 224, 235, 0.383);
+  border: #fff solid 2px;
+  border-radius: 10px;
+}
+#types-container {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.uploaded-container h2 {
+  padding: 1rem;
+  color: rgb(3, 105, 161);
+  font-size: 2.4rem;
+
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.info-container label{
+    color: rgb(3, 105, 161);
+    font-weight: bold;
+}
+
+.info-container input {
+  font-size: 14px;
+  border-radius: 6px;
+  line-height: 1.5;
+  padding: 5px 10px;
+  transition: box-shadow 100ms ease-in, border 100ms ease-in,
+    background-color 100ms ease-in;
+  border: 2px solid rgb(3, 105, 161);
+  color: rgb(14, 14, 16);
+  background: #dee1e2;
+  display: block;
+  width: 30rem;
+  height: 36px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-container input:hover {
+  border-color: #ccc;
+}
+
+.info-container input:focus {
+  border-color: rgb(3, 105, 161);
+  background: #fff;
+}
+
+.uploaded-container form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.upload-button{
+    
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    padding: 0 16px;
+    background-color: rgb(3, 105, 161);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(3, 105, 161);
+    color: #fff;
+    font-size: 13px;
+    line-height: 30px;
+    font-weight: bold;
+    text-align: center;
+    height: 3rem;
+
+
+}
+.upload-button:hover {
+    background-color: #005fb2;  
+    border-color: #005fb2;
+} 
+
+
+@media (max-width:780px) {
+
+  .info-container input {
+
+    width: auto;
+   
+  }
+}

@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.hidden{
+    display: none !important;
+}
+#bodyAdminPanel{
+
+    
+    box-sizing: border-box;
+    font-family: 'Signika Negative', sans-serif;
+    background-color: rgb(3,105,161);
+    height: 100vh;
+}
+main{
+
+}
+#navLogin{
+    z-index: 999;
+    margin: 0px;
+    background-color: white;
+    color:rgb(3,105,161);
+    font-size: 1.4rem;
+    font-weight: 600;
+ 
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+#navLogin ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navLogin ul li{
+    margin-inline:2rem;
+}
