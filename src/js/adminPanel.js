@@ -3,8 +3,12 @@ import {handlerOption} from "./handlerOption.js";
 const token = localStorage.getItem('token');
 const ObjToken = JSON.parse(token);
 
+
+
 const container = document.getElementById("bodyAdminPanel");
 const API_URL = 'https://ipetym69-api.vercel.app/';
+
+
 
 const recources = async(inputs)=>{
   const loaderPanel = document.getElementById('loader_adminPanel');
@@ -66,7 +70,7 @@ const news = async(inputs)=>{
   if(checkPanel.classList.contains('hidden')){
     checkPanel.classList.remove('hidden');
     setTimeout(() => {
-      checkPanel.classList.add('hidden')
+      checkPanel.classList.add('hidden');
     }, 1000);
   }
   return data;
@@ -76,11 +80,14 @@ const ValueInput = ({t,d,i,e})=>{
     const title = document.getElementById(t).value;
     const description = document.getElementById(d).value;
     const image = document.getElementById(i).value;
-
-    if(title === "" || description === "" || image==="" || e === ""){
+    
+    if(title === "" || description === "" || image===""){
       throw new Error('Complete los campos'); 
     };
-    console.log(title,description,image,e)
+    if(e){
+      const enlace = e.value;
+      return {title,description,image, enlace};
+    }
     return {title,description,image};
 }
 
@@ -107,8 +114,14 @@ const Fecths = (e)=>{
     if(id === "submit-recources"){
       const inputs = ValueInput({t:'titulo-recurso',d:'descripcion-recurso_input',i:'enlace-recurso'});
       console.log(id);
-      return recources(inputs);
+      recources(inputs);
+      
     };
+
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach((i)=>{
+      i.value= "";
+    });
 } 
 
 window.addEventListener('submit',Fecths);
@@ -118,6 +131,7 @@ uploadOptions.forEach((option) => {
     "click",
     (e) => {
       handlerOption(e.target.innerText,typesContainer);
+
     },
     false
   );

@@ -22,7 +22,7 @@ const renderNews = news=>{
             <div id="new-description">
                 <p>${news.description}</p>
             </div>
-            <button><a href="https://www.facebook.com/canaldoscoop/videos/988740811650721/" target="_blank">Leer Más</a></button>
+            <button><a href="${news.enlace}" target="_blank">Leer Más</a></button>
         </div>
     
     </div>
@@ -30,7 +30,22 @@ const renderNews = news=>{
 };
 
 const renderResources = resource=>{
-    return ``;
+    return `
+    <div class="others-container">
+        <div id="form-title-container">
+            <h2>${resource.title}</h2>
+        </div>
+        <div  id="forms">
+            <div class="information-forms">
+                <p>${resource.description}</p>
+            </div>
+            <div class="btn-forms">
+                <a href="${resource.image}" alt="Imagen tutorias" target="_blank"><button>Ver</button></a>
+            </div>
+            
+        </div>
+    </div>        
+    `;
 };
 
 
@@ -39,6 +54,5 @@ export const filter = async(newConta,resourceConta,obj)=>{
     const resourcesList =await obj.find.recources;
 
     newConta.innerHTML = newsList.map(element => renderNews(element)).join("");
-    resourceConta.innerHTML = resourcesList.map(element => renderResources(element)).join("");
-
+    resourceConta.innerHTML = resourcesList.map(element=>renderResources(element)).join("");
 }   
