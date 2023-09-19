@@ -6,6 +6,7 @@ const promps = {
     title:Joi.string(),
     description:Joi.string(),
     image:Joi.string(),
+    enlace:Joi.string(),
 }
 
 const getNewsSchema = Joi.object({
@@ -13,16 +14,18 @@ const getNewsSchema = Joi.object({
 });
 
 const createNewsSchema = Joi.object({
-    user:promps.user.required(),
-    title:promps.title.required(),
-    description:promps.description.required(),
-    image:promps.image.required(),    
+    user:promps.user,
+    title:promps.title,
+    description:promps.description,
+    image:promps.image,   
+    enlace:promps.enlace,
 });
 
 const updateNewsSchema = Joi.object({
     title:promps.title,
     description:promps.description,
     image: promps.image,
+    enlace:promps.enlace,
 });
 
 

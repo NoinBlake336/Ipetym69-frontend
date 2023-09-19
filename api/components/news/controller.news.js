@@ -4,13 +4,14 @@ const service = new newsServices();
 const USER = new UserServices();
 
 class ControllerNews {
-    async create(user,title,description,image){
+    async create(user,title,description,image,enlace){
         const userId  = await USER.getOneUser(user);
         const fullNews = {
             user: userId._id,
             title:title,
             description:description,
             image:image,
+            enlace:enlace,
             date: new Date(),
         };
         

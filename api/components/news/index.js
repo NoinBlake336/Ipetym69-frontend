@@ -41,8 +41,8 @@ router.post('/',
     validatorHandler(createNewsSchema,'body'),
     async(req,res,next)=>{
         try {   
-            const {user,title,description,image} = req.body;
-            const newNews = await controller.create(user,title,description,image);
+            const {user,title,description,image,enlace} = req.body;
+            const newNews = await controller.create(user,title,description,image,enlace);
             res.status(201).json(newNews);
         } catch (error) {
             next(error);

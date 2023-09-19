@@ -15,6 +15,10 @@ export const handlerOption = (option,typesContainer) => {
               <label for="imagen-noticia">Ingrese el enlace de la imagen</label>
               <input type="text" name="imagen-noticia" id="imagen-noticia">
           </div>
+          <div class="info-container"  id="imagen-container">
+            <label for="imagen-noticia">Ingrese el enlace de la noticia</label>
+            <input type="text" name="link-noticia" id="enlace-noticia">
+        </div>
           <button id="submit-news" class="upload-button">Cargar Noticia
           <i id="loader_adminPanel" class="fa-solid fa-rotate fa-spin hidden"></i>
           <div id="container-check">

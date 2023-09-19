@@ -1,7 +1,10 @@
 import { Menu } from "./nav-bar.js";
 import { clickCarousel } from "./carousel.js";
 import { Scroll} from "./UpArrow.js";
-import {getUser} from "./getUser.js";
+import {getUser,filter} from "./getUser.js";
+
+const newsContainer = document.getElementById('newsContainer');
+const resourcesContainer = document.getElementById('resourcesContainer');
 
 (async function init (){
     console.log("Si sos curioso y entraste acá, ¡bienvenido!")
@@ -47,9 +50,8 @@ import {getUser} from "./getUser.js";
 
 
 
-    const User = getUser();
-
-    console.log(User)
+    const User = await getUser();
+    filter(newsContainer,resourcesContainer,User);
     clickCarousel();
     Menu();
     Scroll();

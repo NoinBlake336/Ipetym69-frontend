@@ -57,6 +57,7 @@ const news = async(inputs)=>{
       title:inputs.title,
       description:inputs.description,
       image:inputs.image,
+      enlace:inputs.enlace,
     })
   });
 
@@ -71,15 +72,15 @@ const news = async(inputs)=>{
   return data;
 }
 
-const ValueInput = (t,d,i)=>{
+const ValueInput = ({t,d,i,e})=>{
     const title = document.getElementById(t).value;
     const description = document.getElementById(d).value;
     const image = document.getElementById(i).value;
 
-    if(title === "" || description === "" || image===""){
-      throw new Error('Complete los campos');
+    if(title === "" || description === "" || image==="" || e === ""){
+      throw new Error('Complete los campos'); 
     };
-    console.log(title,description,image)
+    console.log(title,description,image,e)
     return {title,description,image};
 }
 
@@ -98,13 +99,13 @@ const Fecths = (e)=>{
     e.preventDefault();
     const id = e.submitter.id;
     if(id === "submit-news"){
-      const inputs = ValueInput('titulo-noticia','descripcion-noticia','imagen-noticia');
-      console.log(id);
+      const enlace = document.getElementById('enlace-noticia');
+      const inputs = ValueInput({t:'titulo-noticia',d:'descripcion-noticia',i:'imagen-noticia',e:enlace});
       return news(inputs)
     };
 
     if(id === "submit-recources"){
-      const inputs = ValueInput('titulo-recurso','descripcion-recurso_input','enlace-recurso');
+      const inputs = ValueInput({t:'titulo-recurso',d:'descripcion-recurso_input',i:'enlace-recurso'});
       console.log(id);
       return recources(inputs);
     };

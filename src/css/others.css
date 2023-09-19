@@ -5,6 +5,13 @@
     background-color: var(--primary-dark);
 }
 
+#resourcesContainer{
+    display: grid;
+    height:100%;
+    width: 100%;
+    background-color: var(--primary-dark);
+}
+
 
 #others-title-container{
     display: flex;
