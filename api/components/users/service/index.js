@@ -11,7 +11,12 @@ class UserServices {
     async getOneUser(id){
         const user = await Model.findById(id)
         .populate({
-            path:'news'
+            path:'news',
+            select:'-user'
+        })
+        .populate({
+            path:'recources',
+            select:'-user'
         });
         if(!user){
             throw boom.badRequest('Not user')
