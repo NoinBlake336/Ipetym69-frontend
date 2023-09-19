@@ -76,6 +76,13 @@
     border-color: #0a58ca;
 }
 
+#loader{
+    position: absolute;
+    left: 35%;
+    top: 23%;
+    font-size:4rem ;
+    color:#0b5ed7;
+}
 
 @media (max-width:780px) {
 

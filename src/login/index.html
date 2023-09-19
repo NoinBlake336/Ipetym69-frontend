@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/globalStyles.css">
-    <link rel="stylesheet" href="./css/loginStyle.css">
+    <link rel="stylesheet" href="../css/globalStyles.css">
+    <link rel="stylesheet" href="../css/loginStyle.css">
     <title>Iniciar Sesion</title>
 </head>
 <body id="bodyAdminPanel">
     <nav id="navLogin">
         <ul>
-            <li><img src="./images/colegiologo.png" alt="Logo del colegio"></li>
+            <li><img src="../images/colegiologo.png" alt="Logo del colegio"></li>
             <li> <span>Panel de administrador Ipetym69</span></li>
         </ul>
 
@@ -20,7 +20,7 @@
         <div id="login-container" >
             <div id="login-box">
                 <h1>Ingresar al sitio</h1>
-                <form id="login-form">
+                <form id="login-form" style="position:relative">
                     <div class="input-container">
                         <label for="username">Ingrese su nombre</label>
                         <input type="text" name="username" class="usernameInput" id="username">
@@ -35,7 +35,7 @@
 
 
                     <button id="button-login">Iniciar Sesion</button>
-
+                    <i id="loader" class="fa-solid fa-rotate fa-spin hidden"></i>
                 </form>
             </div>
             
@@ -43,6 +43,7 @@
     </main>
 
 
-    <script src="./js/login.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="https://kit.fontawesome.com/6074008e21.js" crossorigin="anonymous"></script>
 </body>
 </html>

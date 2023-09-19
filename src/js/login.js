@@ -4,12 +4,13 @@ const loginContainer = document.getElementById("login-container");
 const loginButton = document.getElementById("button-login");
 const errorDiv = document.getElementById("error-div");
 const loginForm = document.getElementById("login-form");
+const loader = document.getElementById('loader');
 
 const API_URL = 'https://ipetym69-api.vercel.app/';
 
-const handlerButton = (credentials) => {
+const handlerButton = () => {
 
-    credentials.username === usernameInput.value.toString() && credentials.password === passwordInput.value.toString() ? loginContainer.classList.add("hidden") : errorDiv.innerHTML = '<span class="errorSpan">Los datos son incorrectos</span>'
+    errorDiv.innerHTML = '<span class="errorSpan">Los datos son incorrectos</span>'
     usernameInput.value = "";
     passwordInput.value="";
     
@@ -20,6 +21,12 @@ const login = (inputs)=>{
 
     const fecthData = async()=>{
         try {
+            if(loader.classList.contains('hidden')){
+                loader.classList.remove('hidden');
+                setTimeout(() => {
+                    loader.classList.add('hidden');
+                }, 1000);
+            }
             const response = await fetch(`${API_URL}api/auth`,{
                method:'POST',
                mode:'cors',
@@ -32,7 +39,10 @@ const login = (inputs)=>{
                }),
             });
 
+
+
             if(!response.ok){
+                handlerButton();
                 throw new Error('La solicitud no fue exitosa');
             };
 
@@ -40,7 +50,9 @@ const login = (inputs)=>{
                 const data = await response.json();
 
                 localStorage.setItem('token',JSON.stringify({user:data.user,token:data.token}));
+                window.location.href="/src/admin-panel";
             }
+
             
         } catch (error) {
             throw new Error('Error en la solicitud')

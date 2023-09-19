@@ -30,6 +30,7 @@
 }
 
 .uploaded-container {
+  position: relative;
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
@@ -96,7 +97,7 @@
 }
 
 .upload-button{
-    
+    position: relative;
     display: inline-block;
     outline: none;
     cursor: pointer;
@@ -118,7 +119,29 @@
     border-color: #005fb2;
 } 
 
+#dontSingIn{
+  color:white;
+}
 
+#error_image{
+  width: 7rem;
+  
+}
+
+#loader_adminPanel{
+  position: absolute;
+  font-size: 1.5rem;
+  color: #fff;
+  left: 10rem;
+  top: 10px;
+}
+#container-check{
+  position: absolute;
+  top:0.5rem;
+  left:20rem;
+  font-size: 1.2rem;
+  color:#3bbf21;
+}
 @media (max-width:780px) {
 
   .info-container input {

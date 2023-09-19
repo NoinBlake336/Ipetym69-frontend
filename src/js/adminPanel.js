@@ -1,73 +1,122 @@
 import {VerifyToken} from "./authenticateAdminPanel.js";
-const token = localStorage.setItem('token');
+import {handlerOption} from "./handlerOption.js";
+const token = localStorage.getItem('token');
+const ObjToken = JSON.parse(token);
+
 const container = document.getElementById("bodyAdminPanel");
+const API_URL = 'https://ipetym69-api.vercel.app/';
 
+const recources = async(inputs)=>{
+  const loaderPanel = document.getElementById('loader_adminPanel');
+  const checkPanel = document.getElementById('check');
+  if(loaderPanel.classList.contains('hidden')){
+    loaderPanel.classList.remove('hidden');
+  }
+  const response = await fetch(`${API_URL}api/recources`,{
+    method:'POST',
+    mode:'cors',
+    headers:{
+      'Content-Type':'Application/json',
+    },
+    body:JSON.stringify({
+      user:ObjToken.user,
+      title:inputs.title,
+      description:inputs.description,
+      image:inputs.image,
+    })
+  });
 
-const Dashboard = ()=>{
-    VerifyToken(token,container);
+  const data = await response.json();
+  loaderPanel.classList.add('hidden');
+  if(checkPanel.classList.contains('hidden')){
+    checkPanel.classList.remove('hidden');
+    setTimeout(() => {
+      checkPanel.classList.add('hidden')
+    }, 1000);
+  }
+
+  
+  return data;
+
+}
+
+const news = async(inputs)=>{
+  const loaderPanel = document.getElementById('loader_adminPanel');
+  const checkPanel = document.getElementById('check');
+  if(loaderPanel.classList.contains('hidden')){
+    loaderPanel.classList.remove('hidden');
+  }
+  const response = await fetch(`${API_URL}api/news`,{
+    method:'POST',
+    mode:'cors',
+    headers:{
+      'Content-Type':'Application/json',
+    },
+    body:JSON.stringify({
+      user:ObjToken.user,
+      title:inputs.title,
+      description:inputs.description,
+      image:inputs.image,
+    })
+  });
+
+  const data = await response.json();
+  loaderPanel.classList.add('hidden');
+  if(checkPanel.classList.contains('hidden')){
+    checkPanel.classList.remove('hidden');
+    setTimeout(() => {
+      checkPanel.classList.add('hidden')
+    }, 1000);
+  }
+  return data;
+}
+
+const ValueInput = (t,d,i)=>{
+    const title = document.getElementById(t).value;
+    const description = document.getElementById(d).value;
+    const image = document.getElementById(i).value;
+
+    if(title === "" || description === "" || image===""){
+      throw new Error('Complete los campos');
+    };
+    console.log(title,description,image)
+    return {title,description,image};
+}
+
+const Dashboard = (ObjToken)=>{
+    VerifyToken(ObjToken,container);
 };
 
-Dashboard();
-
-
+Dashboard(ObjToken);
 
 
 const uploadOptions = document.querySelectorAll(".upload-option");
 const typesContainer = document.getElementById("types-container");
 
 
+const Fecths = (e)=>{
+    e.preventDefault();
+    const id = e.submitter.id;
+    if(id === "submit-news"){
+      const inputs = ValueInput('titulo-noticia','descripcion-noticia','imagen-noticia');
+      console.log(id);
+      return news(inputs)
+    };
 
+    if(id === "submit-recources"){
+      const inputs = ValueInput('titulo-recurso','descripcion-recurso_input','enlace-recurso');
+      console.log(id);
+      return recources(inputs);
+    };
+} 
 
-
-
-
-const handlerOption = (option) => {
-  console.log(option === "Noticia");
-  option === "Noticia"
-    ? (typesContainer.innerHTML = `<div class="uploaded-container">
-    <h2>Cargar una noticia</h2>
-    <form action="">
-        <div class="info-container"  id="titulo-container">
-            <label for="titulo-noticia">Ingrese el titulo de la noticia</label>
-            <input type="text" name="titulo-noticia" id="titulo-noticia">
-        </div>
-        <div class="info-container"  id="descripcion-container">
-            <label for="descripcion-noticia">Ingrese una breve descripcion de la noticia</label>
-            <input type="text" name="descripcion-noticia" id="descripcion-noticia">
-        </div>
-        <div class="info-container"  id="imagen-container">
-            <label for="imagen-noticia">Ingrese el enlace de la imagen</label>
-            <input type="text" name="imagen-noticia" id="imagen-noticia">
-        </div>
-        <button class="upload-button">Cargar Noticia</button>
-    </form>
-</div>`)
-    : (typesContainer.innerHTML = `<div class="uploaded-container">
- <h2>Cargar un recurso</h2>
- <form action="">
-     <div class="info-container" id="titulo-container">
-         <label for="titulo-recurso">Ingrese el titulo del recurso</label>
-         <input type="text" name="titulo-recurso" id="titulo-recurso">
-     </div>
-     <div class="info-container"  id="descripcion-recurso">
-         <label for="descripcion-noticia">Ingrese una breve descripcion del recurso</label>
-         <input type="text" name="descripcion-noticia" id="descripcion-noticia">
-     </div>
-     <div class="info-container"  id="boton-recurso">
-         <label for="enlace-recurso">Ingrese el enlace al recurso</label>
-         <input type="text" name="enlace-recurso" id="enlace-recurso">
-     </div>
-
-     <button class="upload-button">Cargar recurso</button>
- </form>
-</div>`);
-};
+window.addEventListener('submit',Fecths);
 
 uploadOptions.forEach((option) => {
   option.addEventListener(
     "click",
     (e) => {
-      handlerOption(e.target.innerText);
+      handlerOption(e.target.innerText,typesContainer);
     },
     false
   );

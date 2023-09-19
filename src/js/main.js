@@ -1,6 +1,7 @@
 import { Menu } from "./nav-bar.js";
 import { clickCarousel } from "./carousel.js";
 import { Scroll} from "./UpArrow.js";
+import {getUser} from "./getUser.js";
 
 (async function init (){
     console.log("Si sos curioso y entraste acá, ¡bienvenido!")
@@ -42,8 +43,21 @@ import { Scroll} from "./UpArrow.js";
     ⠿⢿⣿⣿⣿⣷⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⣾⣿⡿⠰⠖⠄⠄⠄⠄⠄⠄
     ⣭⣕⠒⠲⣭⣭⣝⣛⠛⠛⠛⠛⠛⠛⠛⢛⣛⣭⠄⣿⡟⢣⣴⣾⠟⢂⣤⡀⠄⠄
     ⣿⣿⣿⣿⣶⣶⣮⣭⣭⣭⣍⣛⣛⣉⣭⣭⣭⣶⢸⣿⣿⣿⣯⣴⠞⣛⣭⣶⣷⠄
-    `)
+    `);
+
+
+
+    const User = getUser();
+
+    console.log(User)
     clickCarousel();
     Menu();
     Scroll();
-})()
+    
+})();
+
+
+
+
+
+
