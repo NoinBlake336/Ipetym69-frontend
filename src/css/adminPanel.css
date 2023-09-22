@@ -142,6 +142,8 @@
   font-size: 1.2rem;
   color:#3bbf21;
 }
+
+
 @media (max-width:780px) {
 
   .info-container input {

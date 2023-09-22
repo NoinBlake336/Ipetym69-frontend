@@ -101,7 +101,6 @@ Dashboard(ObjToken);
 const uploadOptions = document.querySelectorAll(".upload-option");
 const typesContainer = document.getElementById("types-container");
 
-
 const Fecths = (e)=>{
     e.preventDefault();
     const id = e.submitter.id;
@@ -131,11 +130,11 @@ uploadOptions.forEach((option) => {
     "click",
     (e) => {
       handlerOption(e.target.innerText,typesContainer);
-
+      const editButtons = document.querySelectorAll('.edit');
+      
     },
     false
   );
 });
-
 
 

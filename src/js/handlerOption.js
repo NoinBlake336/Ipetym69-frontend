@@ -19,12 +19,17 @@ export const handlerOption = (option,typesContainer) => {
             <label for="imagen-noticia">Ingrese el enlace de la noticia</label>
             <input type="text" name="link-noticia" id="enlace-noticia">
         </div>
-          <button id="submit-news" class="upload-button">Cargar Noticia
-          <i id="loader_adminPanel" class="fa-solid fa-rotate fa-spin hidden"></i>
-          <div id="container-check">
+        <div id="container-button">
+            <button id="submit-news" class="upload-button">Cargar Noticia
+            <i id="loader_adminPanel" class="fa-solid fa-rotate fa-spin hidden"></i>
+            <div id="container-check">
             <i id="check" class="fa-solid fa-check hidden"></i>
-          </div>
-          </button>
+            </div>
+            </button>
+            <button class="edit" id="edit-news">
+                 <p>Editar Noticias</p>
+            </button>
+        </div>
           
       </form>
   </div>`)
@@ -44,12 +49,17 @@ export const handlerOption = (option,typesContainer) => {
            <input type="text" name="enlace-recurso" id="enlace-recurso">
        </div>
   
-       <button id="submit-recources" class="upload-button">Cargar recurso
-        <i id="loader_adminPanel" class="fa-solid fa-rotate fa-spin hidden"></i>
-        <div id="container-check">
-            <i id="check" class="fa-solid fa-check hidden"></i>
+        <div id="container-button">
+            <button id="submit-recources" class="upload-button">Cargar Recurso
+                <i id="loader_adminPanel" class="fa-solid fa-rotate fa-spin hidden"></i>
+                <div id="container-check">
+                    <i id="check" class="fa-solid fa-check hidden"></i>
+                </div>
+            </button>
+            <button class="edit" id="edit-resources">
+                 <p>Editar Recursos</p>
+            </button>
         </div>
-       </button>
    </form>
    
   </div>`);

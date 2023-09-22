@@ -13,7 +13,7 @@ router.post('/',
             const payload = {
                 sub:user.id,
             };
-            const token = jwt.sign(payload,config.secretKey,{expiresIn:'7min'});
+            const token = jwt.sign(payload,config.secretKey,{expiresIn:'20min'});
             res.status(201).json({
                 user:user.id,
                 token:token,

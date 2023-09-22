@@ -46,3 +46,17 @@ main{
 #navLogin ul li img{
     width: 4.5rem;
 }
+
+.edit{
+    cursor: pointer;
+    padding: 0 16px;
+    background-color: rgb(3, 105, 161);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(3, 105, 161);
+    color: #fff;
+    font-size: 13px;
+    line-height: 30px;
+    font-weight: bold;
+    text-align: center;
+    height: 3rem;
+  }

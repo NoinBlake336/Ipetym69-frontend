@@ -56,11 +56,6 @@ const renderHTML = (container)=>{
             </div>
         </div>
         <div id="types-container"></div>
-
-
-
-
-
     </main>
     `
 }
