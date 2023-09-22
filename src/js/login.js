@@ -23,9 +23,6 @@ const login = (inputs)=>{
         try {
             if(loader.classList.contains('hidden')){
                 loader.classList.remove('hidden');
-                setTimeout(() => {
-                    loader.classList.add('hidden');
-                }, 1000);
             }
             const response = await fetch(`${API_URL}api/auth`,{
                method:'POST',

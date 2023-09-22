@@ -1,5 +1,6 @@
 import {VerifyToken} from "./authenticateAdminPanel.js";
 import {handlerOption} from "./handlerOption.js";
+import { editOptions } from "./editOptions.js";
 const token = localStorage.getItem('token');
 const ObjToken = JSON.parse(token);
 
@@ -130,11 +131,16 @@ uploadOptions.forEach((option) => {
     "click",
     (e) => {
       handlerOption(e.target.innerText,typesContainer);
-      const editButtons = document.querySelectorAll('.edit');
-      
+      const editButton = document.querySelector('.edit');
+      editButton.addEventListener('click',(e)=>{
+        const container = e.target.parentElement.parentElement.parentElement.parentElement;
+        container.classList.add('hidden');
+        editOptions(editButton.id,typesContainer);
+      },false)
     },
     false
   );
 });
+
 
 
