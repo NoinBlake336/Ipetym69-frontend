@@ -21,14 +21,14 @@ export const handlerOption = (option,typesContainer) => {
         </div>
         <div id="container-button">
             <button id="submit-news" class="upload-button">Cargar Noticia
+            </button>
+            <button class="edit" id="edit-news">
+            Editar Noticias
+            </button>
             <i id="loader_adminPanel" class="fa-solid fa-rotate fa-spin hidden"></i>
             <div id="container-check">
             <i id="check" class="fa-solid fa-check hidden"></i>
             </div>
-            </button>
-            <button class="edit" id="edit-news">
-                 <p>Editar Noticias</p>
-            </button>
         </div>
           
       </form>
@@ -51,16 +51,16 @@ export const handlerOption = (option,typesContainer) => {
   
         <div id="container-button">
             <button id="submit-recources" class="upload-button">Cargar Recurso
-                <i id="loader_adminPanel" class="fa-solid fa-rotate fa-spin hidden"></i>
-                <div id="container-check">
-                    <i id="check" class="fa-solid fa-check hidden"></i>
-                </div>
             </button>
             <button class="edit" id="edit-resources">
-                 <p>Editar Recursos</p>
+            Editar Recursos
             </button>
-        </div>
-   </form>
+            </div>
+            <i id="loader_adminPanel" class="fa-solid fa-rotate fa-spin hidden"></i>
+            <div id="container-check">
+                <i id="check" class="fa-solid fa-check hidden"></i>
+            </div>
+            </form>
    
   </div>`);
   };

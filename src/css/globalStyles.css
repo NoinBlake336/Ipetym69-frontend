@@ -13,9 +13,7 @@
     background-color: rgb(3,105,161);
     height: 100vh;
 }
-main{
 
-}
 #navLogin{
     z-index: 999;
     margin: 0px;
@@ -60,3 +58,4 @@ main{
     text-align: center;
     height: 3rem;
   }
+

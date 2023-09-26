@@ -1,6 +1,7 @@
 import {VerifyToken} from "./authenticateAdminPanel.js";
 import {handlerOption} from "./handlerOption.js";
 import { editOptions } from "./editOptions.js";
+import {filter} from "./getInformation.js";
 const token = localStorage.getItem('token');
 const ObjToken = JSON.parse(token);
 
@@ -134,13 +135,35 @@ uploadOptions.forEach((option) => {
       const editButton = document.querySelector('.edit');
       editButton.addEventListener('click',(e)=>{
         const container = e.target.parentElement.parentElement.parentElement.parentElement;
-        container.classList.add('hidden');
         editOptions(editButton.id,typesContainer);
-      },false)
+      },false);
     },
     false
   );
 });
 
+
+// Evento de click: Elegir que editar;
+window.addEventListener('click',(e)=>{
+  if(e.target.id === 'edit-news'){
+    return filter('News');
+  }
+
+  if(e.target.id === 'edit-resources'){
+    return filter('Resources');
+  }
+},false);
+
+
+// Evento de click: Cancelar ediciones
+window.addEventListener('click',(e)=>{
+  if(e.target.id === 'cancel-edit-news'){
+    return filter('News');
+  }
+
+  if(e.target.id === 'cancel-edit-resources'){
+    return filter('Resources');
+  }
+},false);
 
 

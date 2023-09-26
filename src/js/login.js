@@ -13,7 +13,7 @@ const handlerButton = () => {
     errorDiv.innerHTML = '<span class="errorSpan">Los datos son incorrectos</span>'
     usernameInput.value = "";
     passwordInput.value="";
-    
+    loader.classList.add('hidden')
     
 }
 
