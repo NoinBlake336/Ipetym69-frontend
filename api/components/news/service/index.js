@@ -25,6 +25,7 @@ class newsServices {
             {title:changes.title,
             description:changes.description,
             image:changes.image,
+            enlace:changes.enlace,
             date:new Date()},
             {new:true},
         );
