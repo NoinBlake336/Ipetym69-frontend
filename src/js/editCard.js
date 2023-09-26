@@ -37,7 +37,7 @@ const editNewsCard = async (id) => {
           const newDescription = document.getElementById('edit-description').value;
           const newImage = document.getElementById('edit-image').value;
           const newEnlace = document.getElementById('edit-enlace').value;
-          console.log(newEnlace)
+         
           // Realizar una solicitud PATCH para actualizar la noticia con los nuevos datos
           const updateUrl = apiUrl; // La URL de actualización de la noticia
           const updateResponse = await fetch(updateUrl, {
