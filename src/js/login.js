@@ -47,7 +47,7 @@ const login = (inputs)=>{
                 const data = await response.json();
 
                 localStorage.setItem('token',JSON.stringify({user:data.user,token:data.token}));
-                window.location.href="/src/admin-panel";
+                window.location.href="/admin-panel";
             }
 
             
