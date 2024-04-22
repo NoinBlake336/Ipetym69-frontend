@@ -1,14 +1,20 @@
 {
-    "builds":[
-        {
-            "src":"./api/index.js",
-            "use":"@vercel/node"
-        }
+    "builds": [
+      {
+        "src": "./api/index.js",
+        "use": "@vercel/node"
+      }
     ],
-    "routes":[
-        {
-            "src":"/(.*)",
-            "dest":"/"
-        }
+    "routes": [
+      {
+        "src": "/api/(.*)", 
+        "dest": "/api/$1" 
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/$1",
+        "methods": ["GET", "OPTIONS"] 
+      }
     ]
-}
+  }
+  
