@@ -7,17 +7,13 @@ const {logErrors,errorHandler,boomErrorHandler} = require('./middlewares/error.h
 const {config} = require('./config/index');
 const connectDB = require('./db/libs');
 const authenticateToken = require('./middlewares/authenticate.token');
-const corsOptions = {
-  origin: 'http://example.com', // Reemplaza 'http://example.com' con la URL de tu página específica
-  methods: ['GET', 'POST'], // Métodos HTTP permitidos
-  allowedHeaders: ['Content-Type', 'Authorization'] // Encabezados permitidos
-};
+
 require('./utils/auth');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
-app.use(cors(corsOptions))
+app.use(cors());
 
 
 connectDB();

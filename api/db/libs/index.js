@@ -5,8 +5,6 @@ const {config} = require('../../config');
 const connectDB = async ()=>{
     try{
         const conn = await mongoose.connect(config.uriDB,{
-            useUnifiedTopology:true,
-            useNewUrlParser: true,
             dbName:'PageCole'
         });
         console.log('mongo database is connected!!');
