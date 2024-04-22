@@ -8,7 +8,12 @@
     "routes": [
       {
         "src": "/(.*)", 
-        "dest": "/$1" 
+        "dest": "/" 
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/",
+        "methods": ["GET", "OPTIONS"] 
       }
     ]
   }

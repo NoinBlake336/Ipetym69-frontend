@@ -1,6 +1,6 @@
 
 export const getUser = async()=>{
-    const response = await fetch(`http://localhost:3000/api/users/6509d2072b1cd92a9fe9115c`);
+    const response = await fetch(`https://ipetym69-api.vercel.app/api/users/6509d2072b1cd92a9fe9115c`);
     const data = await response.json();
     return await data;
 };
