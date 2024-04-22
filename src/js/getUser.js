@@ -1,10 +1,6 @@
-const API = "http://ipetym69-api.vercel.app/api/";
-const idUser = "6509d2072b1cd92a9fe9115c";
+
 export const getUser = async()=>{
-    const response = await fetch(`${API}users/${idUser}`, {
-        method:'GET',
-        mode:'cors'
-    });
+    const response = await fetch(`http://localhost:3000/api/users/6509d2072b1cd92a9fe9115c`);
     const data = await response.json();
     return await data;
 };
