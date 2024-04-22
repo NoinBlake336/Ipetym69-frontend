@@ -9,11 +9,6 @@
       {
         "src": "/(.*)", 
         "dest": "/" 
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/",
-        "methods": ["GET", "OPTIONS"] 
       }
     ]
   }
