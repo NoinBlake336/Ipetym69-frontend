@@ -38,6 +38,6 @@ app.use(logErrors);
 app.use(errorHandler);
 app.use(boomErrorHandler);
 
-app.listen(config.port,()=>{
-    console.log(config.port);
+app.listen(3000,()=>{
+    console.log(3000);
 });
