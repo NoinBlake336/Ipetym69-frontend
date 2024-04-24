@@ -1,8 +1,8 @@
-const API_URL = 'https://ipetym69-api.vercel.app/';
+const API_URL = 'https://ipetym69-api.vercel.app';
 
 const validateToken=async(token,container)=>{
     try {
-        const response = await fetch(`${API_URL}dashboard`,{
+        const response = await fetch(`${API_URL}/dashboard`,{
             method:'GET',
             mode:'cors',
             headers:{

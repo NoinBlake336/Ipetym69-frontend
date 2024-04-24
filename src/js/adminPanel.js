@@ -8,7 +8,7 @@ const ObjToken = JSON.parse(token);
 
 
 const container = document.getElementById("bodyAdminPanel");
-const API_URL = 'https://ipetym69-api.vercel.app/';
+const API_URL = 'https://ipetym69-api.vercel.app';
 
 
 
@@ -18,7 +18,7 @@ const recources = async(inputs)=>{
   if(loaderPanel.classList.contains('hidden')){
     loaderPanel.classList.remove('hidden');
   }
-  const response = await fetch(`${API_URL}api/recources`,{
+  const response = await fetch(`${API_URL}/recources`,{
     method:'POST',
     mode:'cors',
     headers:{

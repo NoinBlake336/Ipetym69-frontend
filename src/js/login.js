@@ -6,7 +6,7 @@ const errorDiv = document.getElementById("error-div");
 const loginForm = document.getElementById("login-form");
 const loader = document.getElementById('loader');
 
-const API_URL = 'https://ipetym69-api.vercel.app/';
+const API_URL = 'https://ipetym69-api.vercel.app';
 
 const handlerButton = () => {
 
@@ -24,7 +24,7 @@ const login = (inputs)=>{
             if(loader.classList.contains('hidden')){
                 loader.classList.remove('hidden');
             }
-            const response = await fetch(`${API_URL}api/auth`,{
+            const response = await fetch(`${API_URL}/auth`,{
                method:'POST',
                mode:'cors',
                headers:{

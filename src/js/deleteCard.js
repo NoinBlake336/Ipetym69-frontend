@@ -3,7 +3,7 @@ import { filter } from "./getInformation.js";
 
 const deleteNewsCard = async(id) =>{
     try {
-        const apiUrl = `https://ipetym69-api.vercel.app/api/news/${id}`;
+        const apiUrl = `https://ipetym69-api.vercel.app/news/${id}`;
         const response = await fetch(apiUrl,{
             method:'DELETE',
             mode:'cors',
@@ -23,7 +23,7 @@ const deleteNewsCard = async(id) =>{
 
 const deleteResourceCard = async(id) =>{
     try {
-        const apiUrl = `https://ipetym69-api.vercel.app/api/recources/${id}`;
+        const apiUrl = `https://ipetym69-api.vercel.app/recources/${id}`;
         const response = await fetch(apiUrl,{
             method:'DELETE',
             mode:'cors',

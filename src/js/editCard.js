@@ -3,7 +3,7 @@ import {showAllCards} from './showAllCards.js'
 // Función para editar tarjetas de noticias
 const editNewsCard = async (id) => {
     try {
-      const apiUrl = `https://ipetym69-api.vercel.app/api/news/${id}`;
+      const apiUrl = `https://ipetym69-api.vercel.app/news/${id}`;
       const response = await fetch(apiUrl);
       const data = await response.json();
       const dataNews = await data.news;
