@@ -6,7 +6,7 @@ const editNewsCard = async (id) => {
       const apiUrl = `https://ipetym69-api.vercel.app/news/${id}`;
       const response = await fetch(apiUrl);
       const data = await response.json();
-      const dataNews = await data.news;
+      const dataNews = await data;
       if (response.ok) {
         // Lógica para abrir el formulario de edición y actualizar la tarjeta aquí para noticias
         const editModal = document.getElementById(`${id}`);
@@ -86,7 +86,8 @@ const editNewsCard = async (id) => {
       const response = await fetch(apiUrl);
   
       const data = await response.json();
-      const dataRecources = await data.Recources;
+      console.log(data)
+      const dataRecources = await data;
       if (response.ok) {
         // Lógica para abrir el formulario de edición y actualizar la tarjeta aquí para recursos
         const editModal = document.getElementById(`${id}`);
@@ -110,7 +111,7 @@ const editNewsCard = async (id) => {
 
 
 
-        
+
   
         // Manejar el evento de guardado para recursos
         const saveButton = document.getElementById('save-edit');
