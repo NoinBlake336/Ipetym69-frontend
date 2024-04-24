@@ -82,7 +82,7 @@ const editNewsCard = async (id) => {
   // Función para editar tarjetas de recursos
   const editResourceCard = async (id) => {
     try {
-      const apiUrl = `https://ipetym69-api.vercel.app/api/recources/${id}`;
+      const apiUrl = `https://ipetym69-api.vercel.app/recources/${id}`;
       const response = await fetch(apiUrl);
   
       const data = await response.json();
@@ -105,6 +105,12 @@ const editNewsCard = async (id) => {
         </div>
           </form>
         `;
+
+
+
+
+
+        
   
         // Manejar el evento de guardado para recursos
         const saveButton = document.getElementById('save-edit');
